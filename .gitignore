@@ -12,6 +12,7 @@
 
 # misc
 src/**/*.css
+.env
 .DS_Store
 .env.local
 .env.development.local
