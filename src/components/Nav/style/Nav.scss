@@ -1,0 +1,31 @@
+@import "../../../Sass/__mixins.scss";
+@import "../../../Sass/__variables.scss";
+.header_big {
+  height: 80px;
+}
+.header_small {
+  height: 50px;
+  background: blue;
+}
+header {
+  @include flex(space-between, center, row);
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  padding: 0 90px;
+  box-sizing: border-box;
+  div {
+    width: 40%;
+    @include flex(space-around, center, row);
+    .nav-sections {
+      font-family: sans-serif;
+      letter-spacing: 2px;
+      color: black;
+    }
+    .active {
+      border-bottom: 2px solid black;
+    }
+    .inactive {
+    }
+  }
+}
