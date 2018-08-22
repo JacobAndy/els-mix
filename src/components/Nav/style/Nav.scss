@@ -1,11 +1,49 @@
 @import "../../../Sass/__mixins.scss";
 @import "../../../Sass/__variables.scss";
 .header_big {
-  height: 80px;
+  height: 90px;
 }
 .header_small {
-  height: 50px;
-  background: blue;
+  transition: height 0.7s;
+  height: 65px;
+  animation: navbar-downsizing 0.7s both;
+  // background-color: rgb(68, 68, 68);
+  div {
+    width: 40%;
+    @include flex(space-around, center, row);
+    .nav-sections {
+      font-family: sans-serif;
+      letter-spacing: 2px;
+      color: white;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    .active {
+      padding-bottom: 0px; //
+      border-bottom: 0px solid black; //
+    }
+    .inactive {
+      opacity: 0.6;
+      margin-bottom: 0px; //
+      padding-bottom: 0px; //
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width 0.3s;
+        //
+        margin-top: 0px;
+      }
+      &:hover::after {
+        //
+        width: 0;
+      }
+    }
+  }
 }
 header {
   @include flex(space-between, center, row);
@@ -14,18 +52,176 @@ header {
   top: 0;
   padding: 0 90px;
   box-sizing: border-box;
+  transition: background-color 0.7s;
+
   div {
-    width: 40%;
+    width: 40vw;
     @include flex(space-around, center, row);
     .nav-sections {
       font-family: sans-serif;
       letter-spacing: 2px;
       color: black;
+      transition: opacity 0.3s;
+      &:hover {
+        opacity: 1;
+      }
     }
     .active {
+      padding-bottom: 9px;
       border-bottom: 2px solid black;
     }
     .inactive {
+      opacity: 0.6;
+      //   margin-bottom: 5px;
+      //   padding-bottom: 2px;
+      &::after {
+        content: "";
+        display: block;
+        width: 0;
+        height: 2px;
+        background: #000;
+        transition: width 0.3s;
+        margin-top: 9px;
+      }
+      &:hover::after {
+        width: 100%;
+      }
+    }
+  }
+}
+@keyframes navbar-downsizing {
+  from {
+    background-color: none;
+    height: 90px;
+  }
+  to {
+    background-color: rgba(68, 68, 68, 0.823);
+    height: 65px;
+  }
+}
+@keyframes navbar-upsizing {
+  from {
+    background-color: rgba(68, 68, 68, 0.555);
+    height: 65px;
+  }
+  to {
+    background-color: none;
+    height: 90px;
+  }
+}
+@media (max-width: "1300px") {
+  header {
+    div {
+      width: 50vw;
+    }
+  }
+}
+@media (max-width: "990px") {
+  .open-nav {
+    transition: left 0.3s;
+    left: 0;
+  }
+  .close-nav {
+    transition: left 0.3s;
+    left: -320px;
+  }
+  .header_big {
+    left: 0px;
+  }
+  .header_small {
+    height: 90px;
+    left: 0;
+    transition: none;
+    animation: none;
+    div {
+      background: #444;
+      width: 320px;
+      height: 92vh;
+      position: absolute;
+      // @include flex(space-around, center, row);
+      flex-direction: column;
+      top: 8vh;
+      left: 0;
+      .nav-sections {
+        font-family: sans-serif;
+        letter-spacing: 2px;
+        color: black;
+        transition: opacity 0.3s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .active {
+        padding-bottom: 9px;
+        border-bottom: 2px solid black;
+      }
+      .inactive {
+        opacity: 0.6;
+        //   margin-bottom: 5px;
+        //   padding-bottom: 2px;
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: #000;
+          transition: width 0.3s;
+          margin-top: 9px;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+  header {
+    @include flex(space-between, center, row);
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    // padding: 0 90px;
+    // box-sizing: border-box;
+    // transition: background-color 0.7s;
+    background: #444;
+    div {
+      background: #444;
+      width: 320px;
+      height: 92vh;
+      position: absolute;
+      // @include flex(space-around, center, row);
+      flex-direction: column;
+      top: 8vh;
+      left: 0;
+      .nav-sections {
+        font-family: sans-serif;
+        letter-spacing: 2px;
+        color: black;
+        transition: opacity 0.3s;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .active {
+        padding-bottom: 9px;
+        border-bottom: 2px solid black;
+      }
+      .inactive {
+        opacity: 0.6;
+        //   margin-bottom: 5px;
+        //   padding-bottom: 2px;
+        &::after {
+          content: "";
+          display: block;
+          width: 0;
+          height: 2px;
+          background: #000;
+          transition: width 0.3s;
+          margin-top: 9px;
+        }
+        &:hover::after {
+          width: 100%;
+        }
+      }
     }
   }
 }
