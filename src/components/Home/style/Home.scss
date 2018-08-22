@@ -4,29 +4,42 @@
 .homepage {
   width: 100%;
   height: 100vh;
-
+  // @include flex(flex-end, center, row);
   img {
     height: auto;
     width: 100%;
     max-height: 960px;
   }
   &__nuts {
-    @include flex(center, flex-end, row);
+    @include flex(flex-end, center, column);
     transition: background-image 0.5s ease-in-out;
     width: 100%;
     height: 90%;
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    &__dots {
-      width: 280px;
-      @include flex(space-around, center, row);
-      margin-bottom: 20px;
-      i {
-        font-size: 30px;
-        color: white;
-        background-color: black;
-        border-radius: 50%;
+    &__content {
+      height: 50vh;
+      @include flex(space-between, center, column);
+      font-family: sans-serif;
+      &__intro {
+        h2 {
+          color: whitesmoke;
+          font-size: 65px;
+          letter-spacing: 1px;
+          text-align: center;
+        }
+      }
+      &__dots {
+        width: 280px;
+        @include flex(space-around, center, row);
+        margin-bottom: 20px;
+        i {
+          font-size: 30px;
+          color: white;
+          background-color: black;
+          border-radius: 50%;
+        }
       }
     }
   }

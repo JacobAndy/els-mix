@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./style/Home.css";
+import Typist from "react-typist";
 
 class Home extends Component {
   state = {
@@ -65,10 +66,24 @@ class Home extends Component {
           className="homepage__nuts"
           style={{ backgroundImage: `url(${currentImage})` }}
         >
-          <div className="homepage__nuts__dots">{dotLocator}</div>
-        </section>
+          <div className="homepage__nuts__content">
+            <div className="homepage__nuts__content__intro">
+              <h2>ELs MIX</h2>
 
-        <h2>{this.props.page}</h2>
+              <h4>
+                The Industry's leading
+                <Typist>
+                  build your own treat!
+                  <Typist.Backspace count={21} delay={2000} />
+                  nut and goodies mix!
+                  <Typist.Backspace count={20} delay={2000} />
+                  snack!
+                </Typist>
+              </h4>
+            </div>
+            <div className="homepage__nuts__content__dots">{dotLocator}</div>
+          </div>
+        </section>
       </div>
     );
   }
