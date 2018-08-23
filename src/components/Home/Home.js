@@ -69,7 +69,7 @@ class Home extends Component {
           <div className="homepage__nuts__content">
             <div className="homepage__nuts__content__intro">
               <h2>ELs MIX</h2>
-
+              {/*make a set interval to change typist*/}
               <h4>
                 The Industry's leading
                 <Typist>
