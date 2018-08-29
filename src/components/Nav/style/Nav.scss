@@ -6,11 +6,12 @@
 .header_small {
   transition: height 0.7s;
   height: 65px;
-  animation: navbar-downsizing 0.7s both;
+  // animation: navbar-downsizing 0.7s both;
   // background-color: rgb(68, 68, 68);
   div {
     width: 40%;
     @include flex(space-around, center, row);
+
     .nav-sections {
       font-family: sans-serif;
       letter-spacing: 2px;
@@ -46,6 +47,7 @@
   }
 }
 header {
+  background: rgba(51, 51, 51, 0.858);
   @include flex(space-between, center, row);
   width: 100vw;
   position: fixed;
@@ -53,25 +55,31 @@ header {
   padding: 0 90px;
   box-sizing: border-box;
   transition: background-color 0.7s;
-
+  .company_name {
+    color: white;
+    font-family: sans-serif;
+    letter-spacing: 7px;
+    font-size: 35px;
+  }
   div {
     width: 40vw;
     @include flex(space-around, center, row);
     .nav-sections {
       font-family: sans-serif;
       letter-spacing: 2px;
-      color: black;
+      color: whitesmoke;
       transition: opacity 0.3s;
       &:hover {
         opacity: 1;
       }
     }
     .active {
+      color: white;
       padding-bottom: 9px;
-      border-bottom: 2px solid black;
+      border-bottom: 2px solid white;
     }
     .inactive {
-      opacity: 0.6;
+      opacity: 0.7;
       //   margin-bottom: 5px;
       //   padding-bottom: 2px;
       &::after {
@@ -79,7 +87,7 @@ header {
         display: block;
         width: 0;
         height: 2px;
-        background: #000;
+        background: whitesmoke;
         transition: width 0.3s;
         margin-top: 9px;
       }

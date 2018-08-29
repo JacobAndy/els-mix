@@ -5,20 +5,9 @@ import BurgerButton from "./BurgerButton";
 
 class NavBar extends Component {
   state = {
-    scrollDown:
-      window.visualViewport.width < 990 ? false : window.pageYOffset > 100,
     burgerToggle: false
   };
-  componentDidMount() {
-    window.addEventListener("scroll", () => {
-      let location = window.pageYOffset;
-      if (location > 100 && window.visualViewport.width > 990) {
-        this.setState({ scrollDown: true });
-      } else if (location < 100 && window.visualViewport.width > 990) {
-        this.setState({ scrollDown: false });
-      }
-    });
-  }
+  componentDidMount() {}
   toggleBurgerNav = () => {
     let { burgerToggle } = this.state;
 
@@ -26,7 +15,7 @@ class NavBar extends Component {
   };
   render() {
     console.log(window);
-    let { scrollDown, burgerToggle } = this.state;
+    let { burgerToggle } = this.state;
     let { nav, location } = this.props;
     let { toggleBurgerNav } = this;
     let navBarTitles = nav.map(e => (
@@ -46,9 +35,9 @@ class NavBar extends Component {
     return (
       <Fragment>
         <BurgerButton toggle={toggleBurgerNav} handle={burgerToggle} />
-        <header className={!scrollDown ? "header_big" : "header_small"}>
+        <header className="header_big">
           <Link to="/">
-            <h2>ElsMix</h2>
+            <h2 className="company_name">ElsMix</h2>
           </Link>
           <div
             className={

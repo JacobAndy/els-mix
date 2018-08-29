@@ -46,13 +46,6 @@ class Home extends Component {
                       ? 0
                       : ++this.state.currentIndex
                 });
-                // this.setState({
-                //   currentImage: photos[this.state.currentIndex],
-                //   currentIndex:
-                //     this.state.currentIndex === photos.length - 1
-                //       ? 0
-                //       : ++this.state.currentIndex
-                // });
               }, 3500);
             }}
             className="far fa-circle"
@@ -68,9 +61,7 @@ class Home extends Component {
         >
           <div className="homepage__nuts__content">
             <div className="homepage__nuts__content__intro">
-              <h2>ELs MIX</h2>
-              {/*make a set interval to change typist*/}
-              <h4>
+              <h4 style={{ color: "white" }}>
                 The Industry's leading
                 <Typist>
                   build your own treat!
